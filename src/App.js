@@ -1,5 +1,8 @@
-import "./App.css";
 import { useState } from "react";
+import { userContext } from "./Context";
+import Header from "./Header";
+import "./App.css";
+
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -10,6 +13,9 @@ function App() {
 
   return (
     <div className="App">
+      <userContext.Provider value={ 'แขไข' }>
+        <Header/>
+      </userContext.Provider>
       <div>
         <h3>จำนวนสินค้าในตะกร้า{totalItems}</h3>
         <h3>ราคาสินค้าในตะกร้าทั้งหมด {totalPrice} บาท </h3>
